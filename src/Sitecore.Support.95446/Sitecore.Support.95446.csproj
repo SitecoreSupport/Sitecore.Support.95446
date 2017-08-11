@@ -40,6 +40,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Sitecore.ContentSearch, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SC.Sitecore.ContentSearch.8.2.3\lib\Sitecore.ContentSearch.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch.Linq, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SC.Sitecore.ContentSearch.Linq.8.2.3\lib\Sitecore.ContentSearch.Linq.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\packages\SC.Sitecore.Kernel.8.2.3\lib\Sitecore.Kernel.dll</HintPath>
       <Private>False</Private>
@@ -48,12 +56,8 @@
       <HintPath>..\packages\SC.Sitecore.Mvc.8.2.3\lib\Sitecore.Mvc.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Sitecore.Speak.Applications, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SC.Sitecore.Speak.Applications.8.2.3\lib\Sitecore.Speak.Applications.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Sitecore.Speak.Client, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SC.Sitecore.Speak.Client.8.2.3\lib\Sitecore.Speak.Client.dll</HintPath>
+    <Reference Include="Sitecore.Speak.ItemWebApi, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SC.Sitecore.Speak.ItemWebApi.8.2.3\lib\Sitecore.Speak.ItemWebApi.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -63,10 +67,15 @@
     <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ItemWebApi\Pipelines\Search\SetLanguage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SelectMediaDialog.cs" />
+    <Compile Include="ShowMediaComputedField.cs" />
+    <Compile Include="ShowMediaComputedFieldEventHandler.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App_Config\Include\zzz\Sitecore.Support.95446.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="web.config" />
   </ItemGroup>
