@@ -3,9 +3,7 @@ using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 using Sitecore.Events;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using Sitecore.ContentSearch.Maintenance;
 
 namespace Sitecore.Support
 {
@@ -21,7 +19,8 @@ namespace Sitecore.Support
 
             Assert.IsNotNull(item, "No item in parameters");
 
-            ContentSearchManager.GetIndex("sitecore_" + item.Database.Name + "_index").Refresh((SitecoreIndexableItem)item);
+            IndexCustodian.Refresh(ContentSearchManager.GetIndex("sitecore_" + item.Database.Name + "_index"),
+                (SitecoreIndexableItem) item);
         }
     }
 }
