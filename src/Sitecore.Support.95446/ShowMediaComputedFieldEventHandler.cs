@@ -19,8 +19,8 @@ namespace Sitecore.Support
 
             Assert.IsNotNull(item, "No item in parameters");
 
-            IndexCustodian.Refresh(ContentSearchManager.GetIndex("sitecore_" + item.Database.Name + "_index"),
-                (SitecoreIndexableItem) item);
+            IndexCustodian.UpdateItem(ContentSearchManager.GetIndex("sitecore_" + item.Database.Name + "_index"),
+                (SitecoreItemUniqueId) item.Uri);
         }
     }
 }
